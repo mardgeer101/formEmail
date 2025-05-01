@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Public/background.png') no-repeat center center fixed;
+    background-size: cover;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #dcdcdc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+  }
+  
+  .card,
+  .success-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .emphasized {
+    border: 2px solid #4a90e2;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .emphasized:hover {
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  label {
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  input,
+  select,
+  button {
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  input,
+  select {
+    border: 1px solid #ccc;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+  
+  button {
+    font-weight: bold;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  button:hover {
+    background-color: #357ac9;
+  }
+  
+  .message {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  
+  .success {
+    color: green;
+  }
+  
+  .error {
+    color: red;
+  }
+  /* Ensure same white background card with slight transparency */
+.card,
+.success-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Match green tone and shadow for success card */
+.success-card {
+  border: 2px solid #357ac9;
+  box-shadow: 0 0 15px rgba(67, 160, 71, 0.2);
+  text-align: center;
+}
+
+.success-card h2 {
+  color: #4a90e2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Match the green button to the verified message */
+.success-card button {
+  background-color: #4a90e2;;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.success-card button:hover {
+  background-color: #357ac9;
+}
+.form-subtitle-1 {
+    text-align: center;
+    color: #2c2727;
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin-top: -10px;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  .underage-card {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border: 2px solid #e53935;
+    box-shadow: 0 0 20px rgba(229, 57, 53, 0.15);
+  }
+  
+  .underage-card h2 {
+    color: #e53935;
+  }
+  
+  .underage-card button {
+    background-color: #e53935;
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .underage-card button:hover {
+    background-color: #c62828;
+  }
+  

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Registration</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2 class="form-title">📄 Register to Get Started
+    </h2>
+    <p class="form-subtitle">
+      Please fill out the form below. Fields marked with * are required.
+    </p>
+
+    <form id="registerForm" class="card emphasized">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" placeholder="First Name, Middle Initial, Last Name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" placeholder="e.g., johndoe@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" placeholder="e.g., +63 912 345 6789" required />
+      </div>
+
+      <div class="form-group">
+        <label for="birthday">Birthday *</label>
+        <input type="date" id="birthday" required />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age *</label>
+        <input type="number" id="age" placeholder="e.g., 25" required />
+      </div>
+
+      <div class="form-group">
+        <label for="civilStatus">Civil Status *</label>
+        <select id="civilStatus" required>
+          <option value="" disabled selected>Select your civil status</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Widowed">Widowed</option>
+          <option value="Separated">Separated</option>
+        </select>
+      </div>
+
+      <button type="submit">Register Now</button>
+      <div id="message" class="message"></div>
+    </form>
+  </div>
+
+  <script>
+    const webhookUrl = 'https://jjquintanilla.app.n8n.cloud/webhook/registration';
+
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const birthday = document.getElementById('birthday').value.trim();
+      const age = document.getElementById('age').value.trim();
+      const civilStatus = document.getElementById('civilStatus').value;
+      const messageEl = document.getElementById('message');
+
+      messageEl.innerHTML = '';
+      messageEl.className = 'message';
+
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, birthday, age, civilStatus })
+      })
+        .then(res => {
+          if (res.redirected) {
+            window.location.href = res.url;
+            return;
+          }
+          return res.ok ? res.json().catch(() => ({})) : Promise.reject(res);
+        })
+        .then(() => {
+          messageEl.classList.add('success');
+          messageEl.innerText = '✅ Success! Confirmation email sent.';
+          document.getElementById('registerForm').reset();
+        })
+        .catch(() => {
+          messageEl.classList.add('error');
+          messageEl.innerText = '❌ Something went wrong. Please try again.';
+        });
+    });
+  </script>
+</body>
+</html>

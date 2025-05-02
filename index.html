@@ -2,55 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>User Registration</title>
+  <title>Event Registration</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <h2 class="form-title">📄 Register to Get Started</h2>
-    <p class="form-subtitle">
-      Please fill out the form below. Fields marked with * are required.
-    </p>
-
-    <form id="registerForm" class="card emphasized">
+    <h2>📅 EVENT REGISTRATION FORM</h2>
+    <form id="eventForm" class="card emphasized">
       <div class="form-group">
         <label for="name">Full Name *</label>
-        <input type="text" id="name" placeholder="First Name, Middle Initial, Last Name" required />
+        <input type="text" id="name" required />
       </div>
 
       <div class="form-group">
         <label for="email">Email Address *</label>
-        <input type="email" id="email" placeholder="e.g., johndoe@email.com" required />
+        <input type="email" id="email" required />
       </div>
 
       <div class="form-group">
-        <label for="phone">Phone Number *</label>
-        <input type="tel" id="phone" placeholder="e.g., +63 912 345 6789" required />
-      </div>
-
-      <div class="form-group">
-        <label for="birthday">Birthday *</label>
-        <input type="date" id="birthday" required />
-      </div>
-
-      <div class="form-group">
-        <label for="age">Age *</label>
-        <input type="number" id="age" placeholder="e.g., 25" required />
-      </div>
-
-      <div class="form-group">
-        <label for="civilStatus">Civil Status *</label>
-        <select id="civilStatus" required>
-          <option value="" disabled selected>Select your civil status</option>
-          <option value="Single">Single</option>
-          <option value="Married">Married</option>
-          <option value="Widowed">Widowed</option>
-          <option value="Separated">Separated</option>
+        <label for="event">Select Event *</label>
+        <select id="event" required>
+          <option value="" disabled selected>Select an event</option>
+          <option value="Web Dev Bootcamp">Web Dev Bootcamp</option>
+          <option value="AI Intro Session">AI Intro Session</option>
+          <option value="UI/UX Masterclass">UI/UX Masterclass</option>
         </select>
       </div>
 
-      <button type="submit">Register Now</button>
-      <div id="message" class="message"></div>
+      <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <input type="time" id="startTime" disabled />
+      </div>
+      
+      <div class="form-group">
+        <label for="endTime">End Time</label>
+        <input type="time" id="endTime" disabled />
+      </div>
+      
+      
+
+      <div class="form-group">
+        <label for="date">Preferred Date *</label>
+        <input type="date" id="date" required disabled />
+      </div>
+
+      <button type="submit">Register</button>
+      <div id="responseMessage" class="message"></div>
     </form>
   </div>
 
